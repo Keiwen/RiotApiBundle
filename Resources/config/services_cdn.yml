@@ -1,0 +1,17 @@
+
+parameters:
+    keiwen_riot_api.cdn.ddragon.class: Keiwen\RiotApi\Cdn\DdragonCdn
+    keiwen_riot_api.cdn.ddragon.version: 6.21.1
+    keiwen_riot_api.cdn.twig.class: Keiwen\RiotApiBundle\Twig\RiotCdnTwig
+
+services:
+
+    keiwen_riot_api.cdn.ddragon:
+        class: '%keiwen_riot_api.cdn.ddragon.class%'
+        arguments: ['%keiwen_riot_api.cdn.ddragon.version%']
+
+    keiwen_riot_api.cdn.ddragon.twig:
+        class: '%keiwen_riot_api.cdn.twig.class%'
+        arguments: ['@keiwen_riot_api.cdn.ddragon']
+        tags:
+            - { name: twig.extension }

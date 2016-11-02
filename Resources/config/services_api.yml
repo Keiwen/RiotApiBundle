@@ -1,0 +1,49 @@
+
+parameters:
+    keiwen_riot_api.api.global.class: Keiwen\RiotApi\Api\GlobalApi
+    keiwen_riot_api.api.regional.class: Keiwen\RiotApi\Api\RegionalApi
+    keiwen_riot_api.api.status.class: Keiwen\RiotApi\Api\StatusApi
+
+services:
+
+    keiwen_riot_api.api.full:
+        class: Keiwen\RiotApi\Api\RiotApi
+        arguments:
+            - '%keiwen_riot_api.api_key%'
+            - '%keiwen_riot_api.default_server%'
+            - '%keiwen_riot_api.output_format%'
+            - '@?keiwen_riot_api.cache'
+            - '%keiwen_riot_api.cache_lifetime.status%'
+            - '%keiwen_riot_api.cache_prefix%']
+
+    keiwen_riot_api.api.global:
+        class: '%keiwen_riot_api.api.global.class%'
+        arguments:
+            - '%keiwen_riot_api.api_key%'
+            - '%keiwen_riot_api.default_server%'
+            - '%keiwen_riot_api.output_format%'
+            - '@?keiwen_riot_api.cache'
+            - '%keiwen_riot_api.cache_lifetime.global%'
+            - '%keiwen_riot_api.cache_prefix%']
+
+
+    keiwen_riot_api.api.regional:
+        class: '%keiwen_riot_api.api.global.class%'
+        arguments:
+            - '%keiwen_riot_api.api_key%'
+            - '%keiwen_riot_api.default_server%'
+            - '%keiwen_riot_api.output_format%'
+            - '@?keiwen_riot_api.cache'
+            - '%keiwen_riot_api.cache_lifetime.regional%'
+            - '%keiwen_riot_api.cache_prefix%']
+
+
+    keiwen_riot_api.api.status:
+        class: '%keiwen_riot_api.api.global.class%'
+        arguments:
+            - '%keiwen_riot_api.api_key%'
+            - '%keiwen_riot_api.default_server%'
+            - '%keiwen_riot_api.output_format%'
+            - '@?keiwen_riot_api.cache'
+            - '%keiwen_riot_api.cache_lifetime.status%'
+            - '%keiwen_riot_api.cache_prefix%']
