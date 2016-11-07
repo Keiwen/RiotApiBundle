@@ -23,8 +23,12 @@ class KeiwenRiotApiExtension extends ConfigurableExtension
             new FileLocator(__DIR__.'/../Resources/config')
         );
 
-        $container->setParameter(self::CDN_CONF, $mergedConfig['cdn']);
-        $container->setParameter(self::CACHE_LIFETIME_CONF, $mergedConfig['cacheLifetime']);
+        if(!empty($mergedConfig['cdn']['ddragon']['version'])) {
+            $container->setParameter(self::CDN_CONF . ".ddragon.version", $mergedConfig['cdn']['ddragon']['version']);
+        }
+        foreach($mergedConfig['cacheLifetime'] as $api => $cachelt) {
+            $container->setParameter(self::CACHE_LIFETIME_CONF . ".$api", $cachelt);
+        }
 
         $container->setParameter('keiwen_riot_api.api_key', $mergedConfig['apiKey']);
         $container->setParameter('keiwen_riot_api.default_server', $mergedConfig['server']);
