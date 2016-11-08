@@ -1,7 +1,7 @@
 {
-  "name": "keiwen/riotapibundle",
+  "name": "keiwen/riotapi-bundle",
   "type": "symfony-bundle",
-  "description": "iot Api library for PHP (RALPHP), symfony bundle support",
+  "description": "Riot Api library for PHP (RALPHP), symfony bundle support",
   "version": "1.0",
 
   "autoload": {
