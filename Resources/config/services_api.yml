@@ -14,7 +14,7 @@ services:
             - '%keiwen_riot_api.output_format%'
             - '@?keiwen_riot_api.cache'
             - '%keiwen_riot_api.cache_lifetime.status%'
-            - '%keiwen_riot_api.cache_prefix%']
+            - '%keiwen_riot_api.cache_prefix%'
 
     keiwen_riot_api.api.global:
         class: '%keiwen_riot_api.api.global.class%'
@@ -24,7 +24,7 @@ services:
             - '%keiwen_riot_api.output_format%'
             - '@?keiwen_riot_api.cache'
             - '%keiwen_riot_api.cache_lifetime.global%'
-            - '%keiwen_riot_api.cache_prefix%']
+            - '%keiwen_riot_api.cache_prefix%'
 
 
     keiwen_riot_api.api.regional:
@@ -35,7 +35,7 @@ services:
             - '%keiwen_riot_api.output_format%'
             - '@?keiwen_riot_api.cache'
             - '%keiwen_riot_api.cache_lifetime.regional%'
-            - '%keiwen_riot_api.cache_prefix%']
+            - '%keiwen_riot_api.cache_prefix%'
 
 
     keiwen_riot_api.api.status:
@@ -46,4 +46,4 @@ services:
             - '%keiwen_riot_api.output_format%'
             - '@?keiwen_riot_api.cache'
             - '%keiwen_riot_api.cache_lifetime.status%'
-            - '%keiwen_riot_api.cache_prefix%']
+            - '%keiwen_riot_api.cache_prefix%'
