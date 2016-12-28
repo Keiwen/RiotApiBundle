@@ -28,7 +28,7 @@ services:
 
 
     keiwen_riot_api.api.regional:
-        class: '%keiwen_riot_api.api.global.class%'
+        class: '%keiwen_riot_api.api.regional.class%'
         arguments:
             - '%keiwen_riot_api.api_key%'
             - '%keiwen_riot_api.default_server%'
@@ -39,7 +39,7 @@ services:
 
 
     keiwen_riot_api.api.status:
-        class: '%keiwen_riot_api.api.global.class%'
+        class: '%keiwen_riot_api.api.status.class%'
         arguments:
             - '%keiwen_riot_api.api_key%'
             - '%keiwen_riot_api.default_server%'
