@@ -2,6 +2,8 @@
 
 namespace Keiwen\RiotApiBundle\DependencyInjection;
 
+use Keiwen\RiotApi\Api\RegionalApi;
+use Keiwen\RiotApi\Dto\DtoParent;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -37,7 +39,14 @@ class KeiwenRiotApiExtension extends ConfigurableExtension
 
         $loader->load('services_cdn.yml');
         $loader->load('services_api.yml');
+        $this->compileClasses();
     }
 
-
+    protected function compileClasses()
+    {
+        $this->addClassesToCompile(array(
+            RegionalApi::class,
+            DtoParent::class,
+        ));
+    }
 }
